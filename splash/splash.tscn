@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://splash/author.png" type="Texture" id=1]
+[ext_resource path="res://splash/event_handler.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -16.0362
+margin_top = 3.5636
+margin_right = 1007.96
+margin_bottom = 603.564
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+margin_left = 936.759
+margin_top = 504.538
+margin_right = 1006.76
+margin_bottom = 584.538
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Background"]
+margin_left = 410.0
+margin_top = 174.0
+margin_right = 602.0
+margin_bottom = 300.0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Background/Button" to="." method="_on_start"]
