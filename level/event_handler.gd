@@ -8,6 +8,10 @@ extends Node2D
 onready var tower = preload("res://towers/basic_tower.tscn")
 onready var enemy = preload("res://enemies/basic_enemy.tscn")
 
+onready var light_enemy = preload("res://enemies/data/light.tres")
+onready var heavy_enemy = preload("res://enemies/data/heavy.tres")
+
+
 var interval = float(1)
 var remaining_time = interval
 
@@ -41,6 +45,10 @@ func _spawn_enemy():
 	
 	var e = enemy.instance()
 	
-	e.initialize(Vector2(x, 0))
+	if (x % 2 == 0):
+		e.initialize(light_enemy, Vector2(x, 0))
+	else:
+		e.initialize(heavy_enemy, Vector2(x, 0))
+	
 	e.set_position(Vector2(10, 200))
 	add_child(e)
