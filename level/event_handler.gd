@@ -25,7 +25,6 @@ func _input(event):
 		var t = tower.instance()
 		t.set_position(event.position)
 		add_child(t)
-		print(get_children())
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,17 +37,16 @@ func _process(delta):
 	
 	
 func _spawn_enemy():
-	
-	print("spawning enemy!")
 	randomize()
-	var x = (randi() % 60) - 30
+	var x = (randi() % 20)
+	var y = (randi() % 10) - 5
 	
 	var e = enemy.instance()
 	
 	if (x % 2 == 0):
-		e.initialize(light_enemy, Vector2(x, 0))
+		e.initialize(light_enemy, Vector2(x, y).normalized())
 	else:
-		e.initialize(heavy_enemy, Vector2(x, 0))
+		e.initialize(heavy_enemy, Vector2(x, y).normalized())
 	
 	e.set_position(Vector2(10, 200))
 	add_child(e)

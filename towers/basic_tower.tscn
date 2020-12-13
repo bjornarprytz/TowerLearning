@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://towers/tower.png" type="Texture" id=1]
-[ext_resource path="res://towers/basic_tower.gd" type="Script" id=2]
+[ext_resource path="res://towers/tower_behaviour.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 325.0
@@ -22,3 +22,5 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 position = Vector2( 100, 100 )
 shape = SubResource( 1 )
+[connection signal="area_entered" from="AttackRange" to="." method="_on_AttackRange_area_entered"]
+[connection signal="area_exited" from="AttackRange" to="." method="_on_AttackRange_area_exited"]
