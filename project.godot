@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://enemies/EnemyStats.gd"
 }, {
 "base": "Resource",
+"class": "ProjectileStats",
+"language": "GDScript",
+"path": "res://projectiles/ProjectileStats.gd"
+}, {
+"base": "Resource",
 "class": "TowerStats",
 "language": "GDScript",
 "path": "res://towers/TowerStats.gd"
 } ]
 _global_script_class_icons={
 "EnemyStats": "",
+"ProjectileStats": "",
 "TowerStats": ""
 }
 

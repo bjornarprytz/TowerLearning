@@ -5,8 +5,8 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-onready var tower = preload("res://towers/basic_tower.tscn")
-onready var enemy = preload("res://enemies/basic_enemy.tscn")
+onready var tower = preload("res://towers/tower.tscn")
+onready var enemy = preload("res://enemies/enemy.tscn")
 
 onready var light_enemy = preload("res://enemies/data/light.tres")
 onready var heavy_enemy = preload("res://enemies/data/heavy.tres")

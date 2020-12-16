@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/towerDefense_tilesheet.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1368, 648, 16, 48 )
+
+[node name="Node2D" type="Area2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 17.0
+margin_bottom = 48.0
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
