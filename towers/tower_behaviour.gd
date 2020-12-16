@@ -2,7 +2,6 @@ extends TextureButton
 
 
 onready var attackRange = get_node("AttackRange/CollisionShape2D")
-onready var sprite = get_node("TextureRect")
 
 var stats : TowerStats
 var targets = []
@@ -13,8 +12,8 @@ func _ready():
 
 func initialize(_stats: TowerStats) -> void:
 	stats = _stats
-	sprite.texture = stats.sprite
-	attackRange.shape.radius = stats.attack_range
+	texture_normal = stats.sprite
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

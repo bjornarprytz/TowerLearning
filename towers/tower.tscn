@@ -1,33 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://towers/tower_behaviour.gd" type="Script" id=1]
-
-[sub_resource type="AtlasTexture" id=1]
-region = Rect2( 4, 4, 1472, 830 )
-margin = Rect2( 0, 0, 0, 2 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = SubResource( 1 )
-region = Rect2( 1280, 640, 64, 64 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 325.0
 
 [node name="Tower" type="TextureButton"]
-anchor_right = 0.062
-anchor_bottom = 0.107
 margin_right = 0.511997
 margin_bottom = -0.200005
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = SubResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AttackRange" type="Area2D" parent="."]
-position = Vector2( 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource( 3 )

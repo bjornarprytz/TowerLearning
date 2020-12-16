@@ -11,6 +11,8 @@ onready var enemy = preload("res://enemies/enemy.tscn")
 onready var light_enemy = preload("res://enemies/data/light.tres")
 onready var heavy_enemy = preload("res://enemies/data/heavy.tres")
 
+onready var arrow_tower = preload("res://towers/data/arrow.tres")
+onready var laser_tower = preload("res://towers/data/laser.tres")
 
 var interval = float(1)
 var remaining_time = interval
@@ -23,6 +25,7 @@ func _input(event):
 	if event is InputEventMouseButton && event.pressed:
 		print("Mouse Click/Unclick at: ", event.position)
 		var t = tower.instance()
+		t.initialize(arrow_tower)
 		t.set_position(event.position)
 		add_child(t)
 		
