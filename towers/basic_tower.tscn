@@ -1,26 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://towers/tower.png" type="Texture" id=1]
+[ext_resource path="res://assets/towerDefense_tilesheet.png" type="Texture" id=1]
 [ext_resource path="res://towers/tower_behaviour.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1280, 640, 64, 64 )
+
+[sub_resource type="CircleShape2D" id=2]
 radius = 325.0
 
 [node name="Tower" type="TextureButton"]
-margin_left = -100.0
-margin_top = -100.0
-margin_right = 100.0
-margin_bottom = 100.0
-texture_normal = ExtResource( 1 )
+anchor_right = 0.062
+anchor_bottom = 0.107
+margin_right = 0.511997
+margin_bottom = -0.200005
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource( 3 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AttackRange" type="Area2D" parent="."]
+position = Vector2( 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
-position = Vector2( 100, 100 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="area_entered" from="AttackRange" to="." method="_on_AttackRange_area_entered"]
 [connection signal="area_exited" from="AttackRange" to="." method="_on_AttackRange_area_exited"]

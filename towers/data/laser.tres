@@ -1,9 +1,16 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://towers/TowerStats.gd" type="Script" id=1]
+[ext_resource path="res://assets/towerDefense_tilesheet.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1280, 640, 64, 64 )
 
 [resource]
 script = ExtResource( 1 )
+sprite = SubResource( 1 )
 tower_type = "Laser Tower"
 health = 100
 attack_damage = 5

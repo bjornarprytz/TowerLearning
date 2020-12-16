@@ -26,6 +26,7 @@ func _on_AttackRange_area_entered(area):
 	if area.is_in_group("enemies"):
 		targets.append(area)
 		print("target acquired: ", area)
+		area.queue_free() # TODO: Replace with shoot
 
 
 func _on_AttackRange_area_exited(area):
